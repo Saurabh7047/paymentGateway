@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 const Razorpay = require('razorpay')
 var instance = new Razorpay({
-  key_id: "rzp_test_OjrvQOSZyDk5Au",
-  key_secret: "pYHwbRI00wkjDatfLWX9kDw8",
+  key_id: "ker_id",
+  key_secret: "key_secret",
 });
 
 /* GET home page. */
@@ -25,7 +25,7 @@ router.post('/api/payment/verify', (req, res) => {
   var razorpayOrderId = req.body.response.razorpay_order_id
   var razorpayPaymentId = req.body.response.razorpay_payment_id;
   var signature = req.body.response.razorpay_signature;
-  var secret = "pYHwbRI00wkjDatfLWX9kDw8";
+  var secret = "key_secret";
 
   var {
     validatePaymentVerification,
